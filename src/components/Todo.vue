@@ -7,6 +7,7 @@
 <script>
     // @ is an alias to /src
     import TodoList from '@/components/TodoList.vue';
+    import {CHECKTODOLIST, PUSHLIST} from '../store/mutations-type';
 
     export default {
         name: 'Todo',
@@ -23,11 +24,10 @@
 
         async created() {
             // this.init();
-            await this.$store.dispatch('CHECKTODOLIST', {
+            await this.$store.dispatch(CHECKTODOLIST, {
                 url: this.url,
             });
-            const {data} = this.$store.state.list;
-            this.list = data;
+            this.list = this.$store.state.list;
         },
 
         methods: {
@@ -35,12 +35,12 @@
             //     const {data} = await this.$http.get('https://api.myjson.com/bins/6svrm');
             //     this.list = data.data;
             //  },
-            childSubmit(data) {
-                this.list.push({
-                    label: data,
-                    isFinish: false,
-                });
-                this.$store.commit('pushList', {
+            async childSubmit(data) {
+                // this.list.push({
+                //     label: data,
+                //     isFinish: false,
+                // });
+                await this.$store.dispatch(PUSHLIST, {
                     label: data,
                     isFinish: false,
                 });

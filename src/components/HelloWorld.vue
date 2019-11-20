@@ -18,6 +18,8 @@
 </template>
 
 <script>
+    import {LOGIN} from '../store/mutations-type';
+
     export default {
         name: 'HelloWorld',
         data() {
@@ -30,18 +32,18 @@
         },
 
         methods: {
-            onSubmit() {
+            async onSubmit() {
                 if (this.form.username === '' || this.form.password === '') {
                     this.$message('用户名或密码不能为空');
                 } else {
-                    this.$store.commit('LOGIN', {
+                    await this.$store.dispatch(LOGIN, {
                         loginState: true,
                     });
                     this.$message({
                         message: '欢迎您 ' + this.form.username,
                         type: 'success',
                     });
-                    this.$router.push('/Space');
+                    await this.$router.push('/Space');
                 }
             }
         },
