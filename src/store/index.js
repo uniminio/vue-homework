@@ -20,7 +20,6 @@ export default new Vuex.Store({
     },
     [PUSHLIST](state, payload) {
       state.list.push(payload);
-      console.log(state.list + payload);
     }
   },
   actions: {
@@ -34,7 +33,6 @@ export default new Vuex.Store({
       commit(LOGIN, payload);
     },
     [PUSHLIST]({commit}, payload) {
-      console.log(payload);
       commit(PUSHLIST, payload);
     }
   },
