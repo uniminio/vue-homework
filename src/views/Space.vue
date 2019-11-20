@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="div-space">
         <el-tabs v-model="activeName" @tab-click="handleClick">
             <el-tab-pane label="假的作业" name="first">
                 <LearnVue></LearnVue>
@@ -39,5 +39,8 @@
 </script>
 
 <style scoped>
-
+.div-space {
+    margin-left: 20%;
+    margin-right: 20%;
+}
 </style>

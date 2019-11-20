@@ -1,15 +1,18 @@
 <template>
-    <div style="margin-left: 30%">
-        <el-col :span="12">
-        <div class="block">
-            <span class="demonstration">头条</span>
-            <el-carousel height="600px">
-                <el-carousel-item v-for="item in img" :key="item">
-                    <img :src="item" alt="" width="664">
-                </el-carousel-item>
-            </el-carousel>
-        </div>
-        </el-col>
+    <div class="div-random-things">
+        <el-carousel :interval="4000" type="card" height="200px">
+            <el-carousel-item v-for="item in img" :key="item">
+                <img :src="item" alt="" width="452">
+            </el-carousel-item>
+        </el-carousel>
+<!--        <div class="block">-->
+<!--            <span class="demonstration">头条</span>-->
+<!--            <el-carousel height="400px">-->
+<!--                <el-carousel-item v-for="item in img" :key="item">-->
+<!--                    <img :src="item" alt="" width="452">-->
+<!--                </el-carousel-item>-->
+<!--            </el-carousel>-->
+<!--        </div>-->
     </div>
 </template>
 
@@ -19,19 +22,14 @@
         data() {
             return {
                 img: [
-                   'https://s2.ax1x.com/2019/11/19/MgsjVs.jpg',
-                   'https://s2.ax1x.com/2019/11/19/MgsLrQ.jpg',
                    'https://s2.ax1x.com/2019/11/19/MgsqKg.jpg',
                    'https://s2.ax1x.com/2019/11/19/MgsObj.jpg',
-                   // 'https://imgchr.com/i/MgsHxS',
-                   // 'https://imgchr.com/i/Mgsvan',
-                   // 'https://imgchr.com/i/Mgsx5q',
-                   // 'https://imgchr.com/i/MgySP0',
-                   // 'https://imgchr.com/i/MgypGV',
-                   // 'https://imgchr.com/i/Mgy92T',
-                   // 'https://imgchr.com/i/MgyCxU',
-                   // 'https://imgchr.com/i/MgyiMF',
-                   // 'https://imgchr.com/i/MgyFr4',
+                   'https://s2.ax1x.com/2019/11/19/MgsHxS.jpg',
+                   // 'https://s2.ax1x.com/2019/11/19/Mgsvan.jpg', // BB机修理
+                   'https://s2.ax1x.com/2019/11/19/MgySP0.jpg',
+                   'https://s2.ax1x.com/2019/11/19/MgyCxU.jpg',
+                   // 'https://s2.ax1x.com/2019/11/19/MgyiMF.jpg', // 大哥大使用
+                   'https://s2.ax1x.com/2019/11/19/MgyFr4.jpg',
                 ],
             };
         },
@@ -39,5 +37,9 @@
 </script>
 
 <style scoped>
+    .div-random-things {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
 
 </style>

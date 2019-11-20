@@ -31,7 +31,7 @@
 
         methods: {
             onSubmit() {
-                if (this.form.username === '' && this.form.password === '') {
+                if (this.form.username === '' || this.form.password === '') {
                     this.$message('用户名或密码不能为空');
                 } else {
                     this.$store.commit('LOGIN', {
