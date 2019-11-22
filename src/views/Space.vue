@@ -1,6 +1,6 @@
 <template>
     <div class="div-space">
-        <el-tabs v-model="activeName" @tab-click="handleClick">
+        <el-tabs v-model="activeName">
             <el-tab-pane label="假的作业" name="first">
                 <LearnVue></LearnVue>
             </el-tab-pane>
@@ -25,6 +25,11 @@
             Todo,
             LearnVue,
             RandomThings,
+        },
+        data() {
+            return {
+                activeName: 'first',
+            };
         },
         created() {
             if (!this.$store.state.loginState) {
